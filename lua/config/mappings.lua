@@ -60,6 +60,3 @@ vim.keymap.set(
 vim.keymap.set(
   'n', '<leader>ll', '<Cmd>lua vim.lsp.buf.codelens()<CR>', { desc = 'Codelens' }
 )
-vim.keymap.set(
-  'n', '<leader>lc', '<Cmd>lua vim.lsp.buf.codelens()<CR>', { desc = 'Codelens' }
-)

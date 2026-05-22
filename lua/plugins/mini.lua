@@ -15,6 +15,9 @@ return {
     config = function()
       local miniclue = require('mini.clue')
       miniclue.setup({
+        window = {
+          config = { anchor = 'SE', width = 'auto', row = 'auto', col = 'auto' },
+        },
         triggers = {
           -- Leader triggers
           { mode = { 'n', 'x' }, keys = '<Leader>' },
