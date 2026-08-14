@@ -1,25 +1,36 @@
 return {
   {
     "tinted-theming/tinted-nvim",
-    priority = 1000, -- load colorscheme early
-    lazy = false,    -- apply on startup
-    config = function(_, opts)
-      local tint = require 'tinted-nvim'
-      tint.setup(opts)
-      local palette = tint.get_palette()
-      vim.api.nvim_set_hl(0, "NormalFloat", {
-        bg = palette.base01
-      })
-      vim.api.nvim_set_hl(0, "BufferTarget", {
-        bg = palette.base08
-      })
-      vim.api.nvim_set_hl(0, "BufferCurrent", {
-        bg = palette.base00
-      })
-    end,
+    priority = 1000,
+    lazy = false,
     opts = {
-      default_scheme = "base16-darkmoss", -- pick any bundled Base16/Base24
-      compile = true,                     -- optional: precompile for faster startup
+      default_scheme = "base16-darkmoss",
+      -- compile = true,                   -- optional: precompile for faster startup
+      ui = { dim_inactive = true, },
+      highlights = {
+        overrides = function(palette)
+          return {
+            -- NormalFloat = { cterm = { dim } },
+            BufferCurrentTarget = {
+              fg = palette.base08,
+              bg = palette.base00
+            },
+            BufferInactiveTarget = {
+              fg = palette.base08,
+            },
+            BufferCurrent = {
+              bg = palette.base00
+            },
+            BufferCurrentMod = {
+              bg = palette.base00
+            },
+            BufferCurrentModBtn = {
+              fg = palette.base09,
+              bg = palette.base00
+            }
+          }
+        end
+      }
     },
   }
 }

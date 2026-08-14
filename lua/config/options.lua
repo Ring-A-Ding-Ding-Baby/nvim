@@ -8,7 +8,3 @@ o.relativenumber = true
 o.winborder = 'none'
 o.ignorecase = true
 o.conceallevel = 3
-vim.opt.list = true
-vim.opt.listchars = {
-  trail = "󰜧",
-}

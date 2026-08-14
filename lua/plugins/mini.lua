@@ -28,4 +28,4 @@ function SpecsBuilder:build(plugin_list)
 end
 
 return SpecsBuilder:build({ 'animate', 'pick', 'surround',
-  'notify', 'bufremove', 'icons', 'sessions', 'diff', 'jump2d', 'ai' })
+  'notify', 'sessions', 'diff', 'jump2d', 'ai' })

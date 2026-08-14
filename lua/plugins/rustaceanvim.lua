@@ -1,9 +1,18 @@
-return {{
+return { {
   'mrcjkb/rustaceanvim',
-  -- To avoid being surprised by breaking changes,
-  -- I recommend you set a version range
   version = '^9',
-  -- This plugin implements proper lazy-loading (see :h lua-plugin-lazy).
-  -- No need for lazy.nvim to lazy-load it.
   lazy = false,
-}}
+  init = function()
+    vim.g.rustaceanvim = function()
+      local cfg = require('rustaceanvim.config')
+      local abs_path = vim.fs.abspath("~/.local/share/vscode/extensions/vadimcn.vscode-lldb/")
+      return {
+        dap = {
+          adapter = cfg.get_codelldb_adapter(
+            abs_path .. "adapter/codelldb",
+            abs_path .. "lldb/lib/liblldb.so")
+        }
+      }
+    end
+  end
+} }
