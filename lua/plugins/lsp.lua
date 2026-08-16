@@ -70,13 +70,15 @@ return {
             client.server_capabilities.inlayHintProvider = false
           end
           if client.name == 'jdtls' then
-            vim.keymap.set("n", "<leader>r", "", { desc = "+Java Refactor" })
-            vim.keymap.set("n", "<leader>rv", "<cmd>JavaRefactorExtractVariable<cr>", { desc = "Extract Variable" })
-            vim.keymap.set("n", "<leader>rV", "<cmd>JavaRefactorExtractVariableAllOccurrence<cr>",
+            vim.keymap.set({ "n", "v" }, "<leader>r", "", { desc = "+Java Refactor" })
+            vim.keymap.set({ "n", "v" }, "<leader>rv", "<cmd>JavaRefactorExtractVariable<cr>",
+              { desc = "Extract Variable" })
+            vim.keymap.set({ "n", "v" }, "<leader>rV", "<cmd>JavaRefactorExtractVariableAllOccurrence<cr>",
               { desc = "Extract Variable all occurrence" })
-            vim.keymap.set("n", "<leader>rc", "<cmd>JavaRefactorExtractConstant<cr>", { desc = "Extract Constant" })
-            vim.keymap.set("n", "<leader>rf", "<cmd>JavaRefactorExtractField<cr>", { desc = "Extract Field" })
-            vim.keymap.set("n", "<leader>rm", "<cmd>JavaRefactorExtractMethod<cr>", { desc = "Extract Method" })
+            vim.keymap.set({ "n", "v" }, "<leader>rc", "<cmd>JavaRefactorExtractConstant<cr>",
+              { desc = "Extract Constant" })
+            vim.keymap.set({ "n", "v" }, "<leader>rf", "<cmd>JavaRefactorExtractField<cr>", { desc = "Extract Field" })
+            vim.keymap.set({ "n", "v" }, "<leader>rm", "<cmd>JavaRefactorExtractMethod<cr>", { desc = "Extract Method" })
 
             vim.keymap.set("n", "<leader>R", "", { desc = "+Java Runners" })
             vim.keymap.set("n", "<leader>Rm", "<cmd>JavaRunnerRunMain<cr>", { desc = "Run Main" })
